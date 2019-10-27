@@ -5,11 +5,11 @@
 
 %% The area between \documentclass{...} and \begin{document} is called the preamble. 
 
-%% ============= PREAMPLE =================================================
+%% ============= PREAMPLE ============================
 
 \documentclass[12pt, twoside]{book}  %% The documentclass is the first package to load in the preample. The format is \documentclass[options]{class} Between the [] we can specify a paper size and the main font size for the document, as well as if document is printed double sided. e.g. [12pt, twoside] Between the {} specifies document type e.g. article, book, report, letter, slides etc. In this particular case I will not set the paper size here, but in the geometry package below. The standard classes, article, report and book support only 3 different font sizes, 10pt, 11pt, 12pt (by default 10pt).
 
-%% =========== PACKAGES ==================================================
+%% =========== PACKAGES ==============================
 
 \usepackage[utf8]{inputenc} %% The usepackage command is used to add more functions to LaTeX. To import a package in LaTeX, you add the \usepackage directive to the preamble of your document. The syntax is \usepackage{PACKAGENAME}. inputenc specifies the input encoding for the document, and utf8 to allows for unicode characters for use with LaTeX beyond standard ASCII. 
 
@@ -26,19 +26,28 @@
 %% ==============FANCYHDR PACKAGE ===================
 
 \usepackage{fancyhdr} %% The fancyhdr package loads a special pagestyle command for headers and footers.
+
 \pagestyle{fancy} %%  The \pagestyle command changes the style of the document. The syntax is \pagestyle{option} The valid options are: plain (a plain page number), empty (Produces empty heads and feet with no page numbers), headings (Puts running headings on each page and the document style specifies what goes in the headings), myheadings (you can specify what is to go in the heading using the \markboth or the \markright commands), and fancy (which is a special pagestyle loaded in the the fancyhdr package which includes two custom commands, \fancyhead and \fancyfoot). 
 %% The syntax for these commands is, \fancyhead[<position specifiers>]{<text>} or \fancyfoot[<position specifiers>]{<text>}. Inside the { } we put the text we want and inside t [ ] we specify where in the header we want the text to be printed. Valid options are: L = for left, R = for right, C = for centre off the header or footer and we can also specify a if this is applied to the odd (O) or even (E) pages. We can combine these, so for example, LE = left side on even pages.
 
 \fancyhead{} %% Entering the \fancyhead{} command with a blank field clears all the header fields
+
 \fancyhead[RO,LE]{Thesis Title} %% This tells LaTeX we want the "Thesis title" text printed on the right-hand side of the header for the odd pages and the left for even pages.
+
 \fancyfoot{} %% Entering the \fancyfoot{} command with a blank field clears the footer fields.
+
 \fancyfoot[LE,RO]{\thepage} %% The LE and RO options makes the page number appear on the left side of the footer for an even pages and the right side for an odd pages. The \thepage command returns the page number of the page it's used on.
+
 \fancyfoot[LO,CE]{Chapter \thechapter} %% This prints the chapter on the left side on odd pages and the centre on even pages. 
+
 \fancyfoot[CO,RE]{Author Name} %% This prints the text specified in {Author Name} in the centre on odd pages and the right on even pages. 
 
 % The \renewcommand is used to redefine a command. The syntax is \renewcommand{cmd}[args]{def}.
+
 \renewcommand{\headrulewidth}{0.2pt} %% Here we use the \renewcommand to change the thickness of the lines in the headers to 0.4pt. This is thinner than the default.
+
 \renewcommand{\footrulewidth}{0.2pt} %% Here we use the \renewcommand to change the thickness of the lines in the footer to 0.4pt.
+
 
 %% ==============BIBLIOGRAPHY===================
 
@@ -46,8 +55,23 @@
 
 %% To make citations we can use the cite command. The Syntax is \cite{citation key}. We can also use the \parencite{citation key} command which prints citations in parentheses. However, it prints the citation in square brackets when using the numeric or alphabetic referencing styles. 
 
-\usepackage[style=alphabetic]{biblatex} %% -- This command loads the biblatex bibliography package and calls the alphabetic style bibliography. If we omit the square brackets the bibliography will print the default style citations which is the numeric style. 
+\usepackage[style=authoryear,sorting=nyt]{biblatex} %% -- This command loads the biblatex bibliography package and calls the alphabetic style bibliography. If we omit the square brackets the bibliography will print the default style citations which is the numeric style. 
+%% OPTIONS: [style=authoryear,sorting=none] for authoryear style with no sorting, or [style=authoryear,sorting=ynt] for authoryear style with sorting for year, name, title.  [style=alphabetic]{biblatex} for alphabetic style.  
+
+%% In this template I have selected the Name, Year, Title sorting. [style=authoryear,sorting=nyt] 
+
 \addbibresource{references.bib} %% This command loads the  bibliography.bib file. 
+
+%% =======CITATION GUIDE=======
+%% 
+%% To add these extra notes to citations we use two sets of square brackets in the citation command before the curly brackets. These are the postnote and the prenote.
+
+%% Examples of Syntax: 
+%% \parencite[prenote][postnote]{citation key}
+%% \cite[][]{citation key}
+%% If we only include one set of square brackets, e.g. \parencite[p.22]{citation key} it will assume the contents of the brackets is a postnote. 
+%% If we want a prenote we need open the second set of square brackets and leave it empty. e.g. Here are some examples: \parencite[see][]{citation key}
+
 
 
 %% =============== TITLE PAGE =======================
@@ -89,7 +113,7 @@ I declare that..
 I want to thank...
 
 
-%% =============== THE MAIN DOCUMENT ===========================
+%% =============== THE MAIN DOCUMENT =========================
 
 \mainmatter % Enter right before the first chapter of the book to turn the numbering to arabic page numbering and restarts the page counter. 
 
@@ -112,7 +136,9 @@ I want to thank...
 
 %% To add an appendix at the end of the document we we use the \appendix command. Following the same structure as the chapters the appendix.tex file will be kept in the chapters folder.  
 \appendix %% This tells LaTeX that what follows is an appendix. After this command chapters will be numbered with letters. 
+
 \chapter{Appendix}
+
 \input{chapters/appendix}
 
 %% ============== REFERENCES ==============================
