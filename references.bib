@@ -1,5 +1,4 @@
 %% To enter a source in BibTeX and tell it what kind of source we are referencing we use the @ symbol followed by the source. e.g. @article for an article,  @book for a book, @online for an online reference.  
-
 %% The following are example of the basic format with the minimum requirements. However, we would usually give more information. 
 % @article{<citation key>, 
 %    author        = {},
@@ -22,10 +21,11 @@
 % }
 
 %% Example of a book
-@book{sennett1998corrosion, %% This is the citation Key that we used to reference this book in the main text document. 
-  title={The corrosion of character: The personal consequences of work in the new capitalism}, %% Title of the Book
+@book{sennett1998corrosion, %% This is the citation Key that we used to reference this book in the main text document. 	
+title={The corrosion of character: The personal consequences of work in the new capitalism}, %% Title of the Book
   author={Sennett, Richard}, %% Author of the book
   year={1998}, %% Year of publication 
+  Keywords = {flexible, individualism, new economy}, %% We can use the Keywords field to record keywords 
   publisher={WW Norton \& Company} %% Publisher information
 }
 
@@ -38,13 +38,21 @@
   number={1}, 
   pages={223--240}, %% Pages references 
   year={2014}, %% Year of publication 
-  publisher={Link{\"o}ping University Electronic Press}
-} %% Publisher  
+  publisher={Link{\"o}ping University Electronic Press} %% Publisher  
+} 
 
-
-@online{Han2015WhyRevolution>,
-    author        = {Han, Byung-Chul},
+%% Example of an online article
+@online{Han2015WhyRevolution,
+	author        = {Han, Byung-Chul},
     title         = {Why revolution is no longer possible},
     year          = {2015},
-    url           = {https://www.opendemocracy.net/en/transformation/why-revolution-is-no-longer-possible/}
+    url           = {https://www.opendemocracy.net/en/transformation/why-revolution-is-no-longer-possible/} %% URL 
+}
+
+@book{dejours2018return,
+  title={The return of work in critical theory: self, society, politics},
+  author={Dejours, Christophe and Deranty, Jean-Philippe and Renault, Emmanuel and Smith, Nicholas H},
+  year={2018},
+  publisher={Columbia University Press},
+  annote={From John Maynard Keynes’s prediction of a fifteen-hour workweek to present-day speculation about automation, we have not stopped forecasting the end of work. Critical theory and political philosophy have turned their attention away from the workplace to focus on other realms of domination and emancipation. But far from coming to an end, work continues to occupy a central place in our lives. This is not only because of the amount of time people spend on the job. Many of our deepest hopes and fears are bound up in our labor—what jobs we perform, how we relate to others, how we might flourish. \\ The Return of Work in Critical Theory presents a bold new account of the human significance of work and the human costs of contemporary forms of work organization. A collaboration among experts in philosophy, social theory, and clinical psychology, it brings together empirical research with incisive analysis of the political stakes of contemporary work. The Return of Work in Critical Theory begins by looking in detail at the ways in which work today fails to meet our expectations. It then sketches a phenomenological description of work and examines the normative premises that underlie the experience of work. Finally, it puts forward a novel conception of work that can renew critical theory’s engagement with work and point toward possibilities for transformation. Inspired by Max Horkheimer’s vision of critical theory as empirically informed reflection on the sources of social suffering with emancipatory intent, The Return of Work in Critical Theory is a lucid diagnosis of the malaise and pathologies of contemporary work that proposes powerful remedies.}
 }

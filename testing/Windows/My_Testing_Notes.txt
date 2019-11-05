@@ -1,0 +1,7 @@
+%% Testing record
+
+TeXMaker
+
+when testing my latex document in TeXMaker there is a problem with citations. Rather than printing (Han 2015) TeXMaker prints the <citation key> in the text i.e. (han2015whyrevolution)
+
+I updated MiKTeX and checked the config file and it seesm okay. 

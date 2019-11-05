@@ -5,11 +5,11 @@
 
 %% The area between \documentclass{...} and \begin{document} is called the preamble. 
 
-%% ============= PREAMPLE ============================
+%%------------------ PREAMPLE ------------------
 
 \documentclass[12pt, twoside]{book}  %% The documentclass is the first package to load in the preample. The format is \documentclass[options]{class} Between the [] we can specify a paper size and the main font size for the document, as well as if document is printed double sided. e.g. [12pt, twoside] Between the {} specifies document type e.g. article, book, report, letter, slides etc. In this particular case I will not set the paper size here, but in the geometry package below. The standard classes, article, report and book support only 3 different font sizes, 10pt, 11pt, 12pt (by default 10pt).
 
-%% =========== PACKAGES ==============================
+%%------------------ PACKAGES ------------------
 
 \usepackage[utf8]{inputenc} %% The usepackage command is used to add more functions to LaTeX. To import a package in LaTeX, you add the \usepackage directive to the preamble of your document. The syntax is \usepackage{PACKAGENAME}. inputenc specifies the input encoding for the document, and utf8 to allows for unicode characters for use with LaTeX beyond standard ASCII. 
 
@@ -23,7 +23,7 @@
 
 
 
-%% ==============FANCYHDR PACKAGE ===================
+%%------------------ FANCYHDR PACKAGE ------------------
 
 \usepackage{fancyhdr} %% The fancyhdr package loads a special pagestyle command for headers and footers.
 
@@ -49,21 +49,19 @@
 \renewcommand{\footrulewidth}{0.2pt} %% Here we use the \renewcommand to change the thickness of the lines in the footer to 0.4pt.
 
 
-%% ==============BIBLIOGRAPHY===================
+%%------------------ BIBLIOGRAPHY ------------------
 
 %% The bibliography information is contained within the file bibliography.bib. Refer to this file for detailed information regarding the syntax of the bibliography entries. 
 
 %% To make citations we can use the cite command. The Syntax is \cite{citation key}. We can also use the \parencite{citation key} command which prints citations in parentheses. However, it prints the citation in square brackets when using the numeric or alphabetic referencing styles. 
 
-\usepackage[style=authoryear,sorting=nyt]{biblatex} %% -- This command loads the biblatex bibliography package and calls the alphabetic style bibliography. If we omit the square brackets the bibliography will print the default style citations which is the numeric style. 
+\usepackage[backend=biber,style=authoryear,sorting=nyt]{biblatex} %% -- This command loads the biblatex bibliography package and calls the alphabetic style bibliography. If we omit the square brackets the bibliography will print the default style citations which is the numeric style. 
 %% OPTIONS: [style=authoryear,sorting=none] for authoryear style with no sorting, or [style=authoryear,sorting=ynt] for authoryear style with sorting for year, name, title.  [style=alphabetic]{biblatex} for alphabetic style.  
-
 %% In this template I have selected the Name, Year, Title sorting. [style=authoryear,sorting=nyt] 
-
 \addbibresource{references.bib} %% This command loads the  bibliography.bib file. 
 
-%% =======CITATION GUIDE=======
-%% 
+%%------------------ ABSTRACT ------------------
+
 %% To add these extra notes to citations we use two sets of square brackets in the citation command before the curly brackets. These are the postnote and the prenote.
 
 %% Examples of Syntax: 
@@ -72,9 +70,9 @@
 %% If we only include one set of square brackets, e.g. \parencite[p.22]{citation key} it will assume the contents of the brackets is a postnote. 
 %% If we want a prenote we need open the second set of square brackets and leave it empty. e.g. Here are some examples: \parencite[see][]{citation key}
 
+%% For more information on referencing refer to the online biblatex guide, http://mirror.aarnet.edu.au/pub/CTAN/macros/latex/contrib/biblatex/doc/biblatex.pdf
 
-
-%% =============== TITLE PAGE =======================
+%%------------------ TITLE PAGE ------------------
 
 %% The following lines in the preamble defines the information to be included on the title page. \title {} prints the title of the document. Inside the outer curly brackets of the \title we have a subheading and an image. \large prints a subheading in large text (this is large text, but smaller than the title text) \includegraphies the logo graphics to be printed on the cover page. The location of images was previously set to the images/ folder using the \graphicspath command. 
 
@@ -85,7 +83,7 @@
 \author{Andrew White} %% Name of author to be printed on the cover page.
 \date{October 2019} %% Date to be printed on the cover page.
 
-
+%%------------------ START OF LATEX DOCUMENT ------------------
 
 \begin{document} %% The area between \begin{document} and \end{document} is the main text of the document. 
 
@@ -100,20 +98,28 @@
 
 %% Abstract, dedication, declaration and acknowledgements. To setup up our document so that the the abstract, dedication, declaration and acknowledgements are not numbered (unnumbered chapters) or included in Contents we use the \chapter command and add an asterisk. e.g \chapter*{Abstract}.. 
 
+%%------------------ ABSTRACT ------------------
+
 \chapter*{Abstract}
 Abstract goes here
+
+%%------------------ DEDICATION ------------------
  
 \chapter*{Dedication}
 To mum and dad
+
+%%------------------ DECLARATION ------------------
  
 \chapter*{Declaration}
 I declare that..
+
+%%------------------ ACKNOWLEDGEMENTS ------------------
  
 \chapter*{Acknowledgements}
 I want to thank...
 
 
-%% =============== THE MAIN DOCUMENT =========================
+%%------------------ THE MAIN THESIS TEXT BEGINS HERE ------------------
 
 \mainmatter % Enter right before the first chapter of the book to turn the numbering to arabic page numbering and restarts the page counter. 
 
@@ -132,7 +138,7 @@ I want to thank...
 \chapter{Conclusion}
 \input{chapters/conclusion} %% This loads the conclusion.tex file from the chapters sub directory. 
 
-%% ================ APPENDIX ===============================
+%%------------------ APPENDIX ------------------
 
 %% To add an appendix at the end of the document we we use the \appendix command. Following the same structure as the chapters the appendix.tex file will be kept in the chapters folder.  
 \appendix %% This tells LaTeX that what follows is an appendix. After this command chapters will be numbered with letters. 
@@ -141,10 +147,16 @@ I want to thank...
 
 \input{chapters/appendix}
 
-%% ============== REFERENCES ==============================
+%%------------------ REFERENCES ------------------
+
 \backmatter %% should be inserted before the very last items in the document,such as the bibliography and the index.  In the standard document classes, this has no visual effect.
 
-\printbibliography %% This command prints the bibliography 
+\setlength{\bibitemsep}{1.6\itemsep} %% This command sets the space between the bibliography entries. 
+
+\nocite{*} %% The \nocite{*} command can be used to if we want to reference all entries in the references.bib file. This is useful because we might want to include material that is not directly referenced. 
+
+
+\printbibliography[heading=bibintoc,title={References}] %% This command prints the bibliography. The parameter heading=bibintoc prints the bibliography in the Table of Contents. We can use the parameter title={} to specify the bibliography title if we do no want the default Bibliography.  
 
 
 \end{document}
