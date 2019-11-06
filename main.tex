@@ -17,30 +17,29 @@
 
 \graphicspath{ {images/} } %% This command tells LaTeX where to find the graphics files. In order to keep the project organised I have created a sub-folder called images where all the graphics files will to kept. 
 
-\usepackage{marginnote} %% This loads the margin notes package.Margin notes can be added using the following syntax \marginnote{margin note text}[vertical offset, e.g 3cm]. Margin notes can be printed on the opposite page using \reversemarginpar right before the \marginnote{margin note text} command. We must also set the width of the margin note in the geometry package to marginparwidth=2.5cm
+\usepackage{marginnote} %% This loads the margin notes package.Margin notes can be added using the following syntax \marginnote{margin note text}[vertical offset, e.g 3cm]. Marginhttps://www.duplicati.com/download notes can be printed on the opposite page using \reversemarginpar right before the \marginnote{margin note text} command. We must also set the width of the margin note in the geometry package to marginparwidth=2.5cm
 
 \usepackage[a4paper, width=150mm, top=25mm, bottom=25mm, bindingoffset=5mm, marginparwidth=2.5cm]{geometry} %% The geometry package is used to configure the page layout by entering the instructions into the square brackets. Syntax is \usepackage[INSTRUCTIONS]{geometry} The default the paper size for LaTeX is set to US letter so we need to change it to A4 paper by entering a4paper. Next we change the width of the text by entering width=150mm as well as the margin sizes at the top and bottom of the page to be 25mm using top=25mm, bottom=25mm. The option, marginparwidth=2.5cm, sets the width of the margin notes. If this is not set the margin note will go off the page. Finally, because we have specified the twoside option in the documentclass we need to set a binding offset, binding offset=6mm. On even pages the text will be slightly closer to the right side, and on odd pages it will be closer to the left. 
-
 
 
 %%------------------ FANCYHDR PACKAGE ------------------
 
 \usepackage{fancyhdr} %% The fancyhdr package loads a special pagestyle command for headers and footers.
 
-\pagestyle{fancy} %%  The \pagestyle command changes the style of the document. The syntax is \pagestyle{option} The valid options are: plain (a plain page number), empty (Produces empty heads and feet with no page numbers), headings (Puts running headings on each page and the document style specifies what goes in the headings), myheadings (you can specify what is to go in the heading using the \markboth or the \markright commands), and fancy (which is a special pagestyle loaded in the the fancyhdr package which includes two custom commands, \fancyhead and \fancyfoot). 
-%% The syntax for these commands is, \fancyhead[<position specifiers>]{<text>} or \fancyfoot[<position specifiers>]{<text>}. Inside the { } we put the text we want and inside t [ ] we specify where in the header we want the text to be printed. Valid options are: L = for left, R = for right, C = for centre off the header or footer and we can also specify a if this is applied to the odd (O) or even (E) pages. We can combine these, so for example, LE = left side on even pages.
+\pagestyle{fancy} %%  The \pproceedagestyle command changes the style of the document. The syntax is \pagestyle{option} The valid options are: plain (a plain page number), empty (Produces empty heads and feet with no page numbers), headings (Puts running headings on each page and the document style specifies what goes in the headings), myheadings (you can specify what is to go in the heading using the \markboth or thehttps://www.duplicati.com/download \markright commands), and fancy (which is a special pagestyle loaded in the the fancyhdr package which includes two custom commands, \fancyhead and \fancyfoot). 
+%% The syntax for these commands is, \fancyhead[<position specifiers>]{<text>} or \fancyfoot[<position specifiers>]{<text>}. Inside the { } we put the text we want and inside t [ ] we specify where in the header we want the text to be printed. Valid options arhttps://www.duplicati.com/downloade: L = for left, R = for right, C = for centre off the header or footer and we can also specify a if this is applied to the odd (O) or even (E) pages. We can combine these, so for example, LE = left side on even pages.
 
 \fancyhead{} %% Entering the \fancyhead{} command with a blank field clears all the header fields
 
-\fancyhead[RO,LE]{Thesis Title} %% This tells LaTeX we want the "Thesis title" text printed on the right-hand side of the header for the odd pages and the left for even pages.
+\fancyhead[RO,LE]{Philosophy of work} %% This tells LaTeX we want the "Thesis title" text printed on the right-hand side of the header for the odd pages and the left for even pages.proceed
 
-\fancyfoot{} %% Entering the \fancyfoot{} command with a blank field clears the footer fields.
+\fancyfoot{} %% Entering the \fancyfoot{} command with a blank field clears the footer fields.https://www.duplicati.com/download
 
 \fancyfoot[LE,RO]{\thepage} %% The LE and RO options makes the page number appear on the left side of the footer for an even pages and the right side for an odd pages. The \thepage command returns the page number of the page it's used on.
 
 \fancyfoot[LO,CE]{Chapter \thechapter} %% This prints the chapter on the left side on odd pages and the centre on even pages. 
 
-\fancyfoot[CO,RE]{Author Name} %% This prints the text specified in {Author Name} in the centre on odd pages and the right on even pages. 
+\fancyfoot[CO,RE]{Andrew white} %% This prints the text specified in {Author Name} in the centre on odd pages anlatex thesis d the right on even pages. 
 
 % The \renewcommand is used to redefine a command. The syntax is \renewcommand{cmd}[args]{def}.
 
@@ -60,7 +59,7 @@
 %% In this template I have selected the Name, Year, Title sorting. [style=authoryear,sorting=nyt] 
 \addbibresource{references.bib} %% This command loads the  bibliography.bib file. 
 
-%%------------------ ABSTRACT ------------------
+%%------------------ CITATIONS ------------------
 
 %% To add these extra notes to citations we use two sets of square brackets in the citation command before the curly brackets. These are the postnote and the prenote.
 
@@ -74,7 +73,7 @@
 
 %%------------------ TITLE PAGE ------------------
 
-%% The following lines in the preamble defines the information to be included on the title page. \title {} prints the title of the document. Inside the outer curly brackets of the \title we have a subheading and an image. \large prints a subheading in large text (this is large text, but smaller than the title text) \includegraphies the logo graphics to be printed on the cover page. The location of images was previously set to the images/ folder using the \graphicspath command. 
+%% The following lines in the preamble defines the information to be included on the title page. \title {} prints the title of the document. Inside the outer curly brackets of the \title we have a subheading and an image. \large prints a subheading in large text (this is large text, but smaller than the title text) \includegraphies the logo graphics to be printed on the cover page. The location of images was previously set to the images/ folder using the \graphicspath command. 1:47
 
 \title{{Philosophy of Work}\\ 
 {\large Subheading}\\
@@ -90,7 +89,9 @@
 \frontmatter % Enter after the (\begin{document}) to switch page numbering to Roman numerals 
 
 
-\maketitle
+%% \maketitle %% This is used to make a title from the information above. However, the \input{titlepage} command will call the titlepage from a separate file called titlepage.tex
+
+\input{titlepage} %%Loads the titlepage from the file titlepage.tex
 
 %% In order to keep the project organized and manageable I have created a sub-folder called chapters. Inside this folder there are .tex files for each chapter of the thesis as well as an appendix. The \input{} command loads the tex file into the main document. For example, \input{chapters/chapter02} loads the file chapter02.tex from the directory chapters. It is important that this directory structure is maintained otherwise LaTeX will not know where to find the chapters and appendix. 
 
@@ -99,9 +100,10 @@
 %% Abstract, dedication, declaration and acknowledgements. To setup up our document so that the the abstract, dedication, declaration and acknowledgements are not numbered (unnumbered chapters) or included in Contents we use the \chapter command and add an asterisk. e.g \chapter*{Abstract}.. 
 
 %%------------------ ABSTRACT ------------------
+\newpage
 
-\chapter*{Abstract}
-Abstract goes here
+\input{abstract} %% this loads the abstract from a separate file called abstact.tex 
+
 
 %%------------------ DEDICATION ------------------
  
