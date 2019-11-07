@@ -42,8 +42,8 @@ github:
 Duplicati:
 
 1. Open Duplicati
-2. Select 2.0.4.23-2.0.4.23_beta_20190714.noarch.rpm
-
+2. Select restore backup
+3. select backup to restore or search
 
 Recovering large quantities of files is beyond the scope of this plan as it involves a lot of time and detail. Duplicati has a disaster recovery page specifically for recovering large numbers of files. 
 https://duplicati.readthedocs.io/en/latest/08-disaster-recovery/
@@ -63,16 +63,18 @@ In case of disaster: New Computer required:
     - boot cd or usb
     - partition hard drive or use VLM
     - reboot system after install (10-15 mins)
-2. install Dropbox, instructions found at https://www.dropbox.com/install-linux
+2. install Dropbox, instructions finstall.packages(c("tidyverse"))ound at https://www.dropbox.com/install-linux
 3. Sync Dropbox (this will restore all data from the Dropbox online server)
 4. Update system using $ sudo dnf update
 5. Install Firefox (login to enable sync)
 6. Download and install Duplicati for Fedora https://www.duplicati.com/download
+    - Install mono for fedora. Mono is an opensource implementain of the .NET framwork. 
+    - $ sudo dnf install mono-complete
     - $ sudo dnf install [name of duplicati file].rpm
 8. install additional software:
     - $ sudo dnf install R
     - $ sudo dnf install texlive
     - $ sudo dnf install texlive-biblatex
-    - $ sudo dnf install texmaker
+    - $ sudo dnf install texmakerinstall.packages(c("tidyverse"))
     - $ sudo dnf install gnome-tweak-tool
 9. Login to guthub and get new computer varification code.
