@@ -1,15 +1,29 @@
-%% TITLE: Thesis template
-%% AUTHOR: Andrew White 
-%% UNIT: FOAR705
-%% YEAR: Semester 2, 2019
+%---------------------------------------------------------- 
+% TITLE: MRes Thesis template
+% AUTHOR: Andrew White 
+% UNIT: FOAR705
+% YEAR: Semester 2, 2019
+%---------------------------------------------------------- 
 
-%% The area between \documentclass{...} and \begin{document} is called the preamble. 
+%---------------------------------------------------------- 
+% Personal notes:
+% Before undertaking FOAR705 at Macquaire university I knew almost nothing about LaTeX, except that I had seen in mentioned before in relation to UNIX and open source software of which I have an affinity for.  
+% This document represents over 100 hours of work on learning LaTeX, testing various options, commands, and layouts, as well as frustration when things did not work. The testing process of this document was for the most part a visual, but also involved getting commands and syntax to work. I feel confident that I can use this document for my thesis and have gained enough knowledge to make changes and modify it if necessary. 
+% I have formatted the document with as many notes and descriptions so that anyone looking at the document should be able to understand what I have achieved, and so I can come back to the document and understand what I was thinking and why I did certain things. 
+% For a philosophy student like myself, interested mostly in reading, writing and making arguments, this template represents an essential tool for writing a an MRes thesis.   
+%---------------------------------------------------------- 
 
-%%------------------ PREAMPLE ------------------
+%---------------------------------------------------------- 
+% PREAMPLE
+% The area between \documentclass{...} and \begin{document} is called the preamble. 
+%----------------------------------------------------------
 
 \documentclass[12pt, twoside]{book}  %% The documentclass is the first package to load in the preample. The format is \documentclass[options]{class} Between the [] we can specify a paper size and the main font size for the document, as well as if document is printed double sided. e.g. [12pt, twoside] Between the {} specifies document type e.g. article, book, report, letter, slides etc. In this particular case I will not set the paper size here, but in the geometry package below. The standard classes, article, report and book support only 3 different font sizes, 10pt, 11pt, 12pt (by default 10pt).
 
-%%------------------ PACKAGES ------------------
+%---------------------------------------------------------- 
+% PACKAGES
+% Packages add more functions to LaTeX
+%----------------------------------------------------------
 
 \usepackage[utf8]{inputenc} %% The usepackage command is used to add more functions to LaTeX. To import a package in LaTeX, you add the \usepackage directive to the preamble of your document. The syntax is \usepackage{PACKAGENAME}. inputenc specifies the input encoding for the document, and utf8 to allows for unicode characters for use with LaTeX beyond standard ASCII. 
 
@@ -23,7 +37,17 @@
 
 \usepackage[a4paper, width=150mm, top=25mm, bottom=25mm, bindingoffset=5mm, marginparwidth=2.5cm]{geometry} %% The geometry package is used to configure the page layout by entering the instructions into the square brackets. Syntax is \usepackage[INSTRUCTIONS]{geometry} The default the paper size for LaTeX is set to US letter so we need to change it to A4 paper by entering a4paper. Next we change the width of the text by entering width=150mm as well as the margin sizes at the top and bottom of the page to be 25mm using top=25mm, bottom=25mm. The option, marginparwidth=2.5cm, sets the width of the margin notes. If this is not set the margin note will go off the page. Finally, because we have specified the twoside option in the documentclass we need to set a binding offset, binding offset=6mm. On even pages the text will be slightly closer to the right side, and on odd pages it will be closer to the left. 
 
+%% Available paper sizes include: a4paper, a5paper, b5paper, letterpaper, executivepaper, legalpaper. 
+
 \usepackage{changepage}   % for the adjustwidth environment, which allows us to change the margins for a section of text. This is useful for large quotes. 
+
+\usepackage{multicol} %% This package allows use the multiple column function. 
+
+\setlength{\columnsep}{1cm} %% This command sets the space between columns to 1 cm.  
+
+\usepackage{wrapfig} %% This package allows us to use the wrap text function to wrap around an image.
+
+\usepackage[font=footnotesize]{caption} %% This loads the caption package and sets the size of the caption font.
 
 %% Syntax:
 %% \begin{adjustwidth}{2cm}{2cm}
@@ -32,10 +56,35 @@
 
 
 
-%%------------------ COLOR PACKAGE ------------------
+%---------------------------------------------------------- 
+% DOCUMENT FONTS
+% This section deals with setting the font for the document.
+%----------------------------------------------------------
+
+%% The default font used for LaTeX is the Computer Modern Roman (cmr). The document is set to the default. Should you want to change the fonts, below are some options.   
+
+    %%---- Helvetica ----
+    %% \usepackage{helvet} %% This sets the Thesis document to load the helvetica packacge. 
+    %% \renewcommand{\rmdefault}{phv} %%This sets the default font to phv (or helvetica)
+
+    %%---- Latin Modern Dunhill ----
+    %% \usepackage{lmodern} %% This sets the Thesis document to load the Latin Modern Dunhill packacge. 
+    %% \renewcommand{\rmdefault}{lmdh} %%This sets the default font to phv (or helvetica)
+
+
+%---------------------------------------------------------- 
+% COLOR PACKAGE
+% This section deals with loading the color package for the document.
+%----------------------------------------------------------
+
 %% This package allows us to use colour in our document. 
 \usepackage[dvipsnames]{xcolor}
 
+
+%---------------------------------------------------------- 
+% FANCYHDR PACKAGE
+% The fancyhdr package is used to set pagestyle, headers and footers.
+%----------------------------------------------------------
 
 %%------------------ FANCYHDR PACKAGE ------------------
 
@@ -63,8 +112,10 @@
 
 \renewcommand{\footrulewidth}{0.2pt} %% Here we use the \renewcommand to change the thickness of the lines in the footer to 0.4pt.
 
-
-%%------------------ BIBLIOGRAPHY ------------------
+%---------------------------------------------------------- 
+% BIBLIOGRAPHY
+% This section sets the biblatex bibliography package.
+%----------------------------------------------------------
 
 %% The bibliography information is contained within the file bibliography.bib. Refer to this file for detailed information regarding the syntax of the bibliography entries. 
 
@@ -75,7 +126,10 @@
 %% In this template I have selected the Name, Year, Title sorting. [style=authoryear,sorting=nyt] 
 \addbibresource{references.bib} %% This command loads the  bibliography.bib file. 
 
-%%------------------ CITATIONS ------------------
+%---------------------------------------------------------- 
+% CITATION INFORMATION
+% Notes on citations
+%----------------------------------------------------------
 
 %% To add these extra notes to citations we use two sets of square brackets in the citation command before the curly brackets. These are the postnote and the prenote.
 
@@ -87,33 +141,44 @@
 
 %% For more information on referencing refer to the online biblatex guide, http://mirror.aarnet.edu.au/pub/CTAN/macros/latex/contrib/biblatex/doc/biblatex.pdf
 
-%%------------------ TITLE PAGE ------------------
 
-%% The following lines in the preamble defines the information to be included on the title page. \title {} prints the title of the document. Inside the outer curly brackets of the \title we have a subheading and an image. \large prints a subheading in large text (this is large text, but smaller than the title text) \includegraphies the logo graphics to be printed on the cover page. The location of images was previously set to the images/ folder using the \graphicspath command. 1:47
+%---------------------------------------------------------- 
+% TITLE PAGE
+% Notes on citations
+%----------------------------------------------------------
+
+
+%% The following lines in the preamble defines the information to be included on the title page. \title {} prints the title of the document. Inside the outer curly brackets of the \title we have a subheading and an image. \large prints a subheading in large text (this is large text, but smaller than the title text) \includegraphies the logo graphics to be printed on the cover page. The location of images was previously set to the images/ folder using the \graphicspath command. 
+
+% This code is redundant since I have decided to load the title page from a separate file. It is left here as a reference in case I decide not to use the separate titlepage file at a later date.
 
 \title{{Philosophy of Work}\\ 
-{\large Subheading}\\
+{\large MRes Thesis Template}\\
 {\includegraphics{MQ_INT_VER_RGB_POS.PNG}}
 }
 \author{Andrew White} %% Name of author to be printed on the cover page.
 \date{October 2019} %% Date to be printed on the cover page.
 
-%%------------------ START OF LATEX DOCUMENT ------------------
+%---------------------------------------------------------- 
+% START OF LATEX DOCUMENT
+% This is the beginning of the document proper
+%----------------------------------------------------------
 
 \begin{document} %% The area between \begin{document} and \end{document} is the main text of the document. 
 
 \frontmatter % Enter after the (\begin{document}) to switch page numbering to Roman numerals 
 
-
 %% \maketitle %% This is used to make a title from the information above. However, the \input{titlepage} command will call the titlepage from a separate file called titlepage.tex
 
-\input{titlepage} %%Loads the titlepage from the file titlepage.tex
+\input{titlepage} %%Loads the title page from the file titlepage.tex
 
 %% In order to keep the project organized and manageable I have created a sub-folder called chapters. Inside this folder there are .tex files for each chapter of the thesis as well as an appendix. The \input{} command loads the tex file into the main document. For example, \input{chapters/chapter02} loads the file chapter02.tex from the directory chapters. It is important that this directory structure is maintained otherwise LaTeX will not know where to find the chapters and appendix. 
 
 \tableofcontents
 
 %% Abstract, dedication, declaration and acknowledgements. To setup up our document so that the the abstract, dedication, declaration and acknowledgements are not numbered (unnumbered chapters) or included in Contents we use the \chapter command and add an asterisk. e.g \chapter*{Abstract}.. 
+
+\listoffigures 
 
 %%------------------ ABSTRACT ------------------
 \newpage
@@ -136,8 +201,10 @@ I declare that...
 \chapter*{Acknowledgements}
 I want to thank...
 
-
-%%------------------ THE MAIN THESIS TEXT BEGINS HERE ------------------
+%---------------------------------------------------------- 
+% THE MAIN THESIS TEXT BEGINS HERE
+% This is the beginning of the document text
+%----------------------------------------------------------
 
 \mainmatter % Enter right before the first chapter of the book to turn the numbering to arabic page numbering and restarts the page counter. 
 
@@ -147,25 +214,32 @@ I want to thank...
 \chapter{Fonts}
 \input{chapters/chapter02} %% This loads the chapter02.tex file from the chapters sub directory. 
  
-\chapter{Chapter Three Title}
+\chapter{Images}
 \input{chapters/chapter03} %% This loads the chapter03.tex file from the chapters sub directory. 
  
-\chapter{Chapter Four Title}
+\chapter{Chapter 4 - Lists, Bullet Points and Columns}
 \input{chapters/chapter04} %% This loads the chapter04.tex file from the chapters sub directory. 
  
 \chapter{Conclusion}
 \input{chapters/conclusion} %% This loads the conclusion.tex file from the chapters sub directory. 
 
-%%------------------ APPENDIX ------------------
+%---------------------------------------------------------- 
+% APPENDIX
+% This is the Appendix section 
+%----------------------------------------------------------
 
 %% To add an appendix at the end of the document we we use the \appendix command. Following the same structure as the chapters the appendix.tex file will be kept in the chapters folder.  
+
 \appendix %% This tells LaTeX that what follows is an appendix. After this command chapters will be numbered with letters. 
 
 \chapter{Appendix}
 
 \input{chapters/appendix}
 
-%%------------------ REFERENCES ------------------
+%---------------------------------------------------------- 
+% REFERENCES
+% This is the references section 
+%----------------------------------------------------------
 
 \backmatter %% should be inserted before the very last items in the document,such as the bibliography and the index.  In the standard document classes, this has no visual effect.
 

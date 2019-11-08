@@ -1,4 +1,7 @@
-%%------------------ TITLE PAGE ------------------
+%-------------------------------------------------
+% TITLE PAGE
+% This is a separate document for the titlepage, which is loaded into the main document.
+%-------------------------------------------------
 
 %% The following lines define the information to be included on the title page. \title {} prints the title of the document. Inside the outer curly brackets of the \title we have a subheading and an image. \large prints a subheading in large text (this is large text, but smaller than the title text) \includegraphies the logo graphics to be printed on the cover page. The location of images was previously set to the images/ folder using the \graphicspath command. 
 
@@ -8,21 +11,28 @@
  
         \Huge %% sets the size of the title text to Huge (for details about changing font types and sizes refer to chapter 02 
         \textbf{Philosophy of Work} %% This is the thesis title
+        
+        \hrulefill %% This puts a horizontal line under the heading of the thesis.
  
-        \LARGE %% sets the size of the subtitle to LARGE
+        \Large %% sets the size of the subtitle to LARGE
+        
         \vspace{0.5cm} %% this sets the space between the heading and the subtitle
-        Thesis Subtitle
+        MRes Thesis Template
  
-        \vspace{1.5cm} %% this sets the space between the subtitle and the Author's name
+        \vspace{1.3cm} %% this sets the space between the subtitle and the Author's name
  
-        \textbf{Andrew white}
+        \LARGE
+ 
+        \textbf{Andrew White}
  
         \vfill %% The \vfill command will automatically add in enough vertical space to fill the page.
+ 
+        \Large %% sets the size to Large
  
        A thesis presented for the degree of\\
        Masters of Research in Philosophy
  
-       \vspace{0.8cm}
+       \vspace{1cm}
  
        \includegraphics[width=0.5\textwidth]{MQ_INT_VER_RGB_POS.PNG} %% The \includegraphics command loads the graphics file MQ_INT_VER_RGB_POS.PNG. The width=0.5\textwidth tells LaTeX to set the width of the graphics file to be 0.5 of the width of the text.  
  

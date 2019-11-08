@@ -1,8 +1,15 @@
+%-------------------------------------------------
+% INTRODUCTION
+% This is a separate document for the Introduction which is loaded into the main document.
+%-------------------------------------------------
+
 LaTeX is a document preparation system. This means LaTeX uses markup tagging commands to structure and stylise a document, to add citations, margin notes, footnotes etc. And it uses plain text for the content which is then generated into a Portable Document Format (PDF) file. 
 
 In this introductory chapter I will setup a template of how to do citations, footnotes and margin notes. The text in the document is generic and only instrumental for the purposes of demonstration, with some explanatory notes. Please refer to the LaTeX files for a more in depth description of the document structure and command syntax. 
 
-\vspace{0.5cm}
+
+
+\newpage
 
 \section{In-text Citations}
 
@@ -19,6 +26,8 @@ Vestibulum ligula sem, volutpat eu erat. Nulla interdum risus non metus vehicula
 %% =======Citation Guide=======
 
 %% See main.text CITATION GUIDE for information of making citations. 
+
+\newpage
 
 \section{Extended Text Citations}
 
@@ -38,7 +47,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam rutrum magna ut mi 
 
 \end{quote}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam rutrum magna ut mi sollicitudin pellentesque. Vivamus sit amet euismod nibh. Sed ornare enim vel tellus faucibus egestas. Donec sit amet diam placerat, interdum sapien sit amet, pulvinar neque. Morbi eget massa ut erat vehicula efficitur. 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam rutrum magna ut mi sollicitudin pellentesque. Vivamus sit amet euismod nibh. Sed ornare enim vel tellus faucibus egestas. Donec sit amet diam placerat, interdum sapien sit amet, pulvinar neque. Morbi eget massa ut erat vehicula efficitur. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam rutrum magna ut mi sollicitudin pellentesque. Vivamus sit amet euismod nibh. Sed ornare enim vel tellus faucibus egestas. Donec sit amet diam placerat, interdum sapien sit amet, pulvinar neque. Morbi eget massa ut erat vehicula efficitur. 
+
 
 \newpage
 
@@ -46,12 +56,18 @@ This second example uses the \verb|\begin{adjustwidth}{2cm}{2cm}| option and the
 
 \vspace{0.4cm}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam rutrum magna ut mi sollicitudin pellentesque. Vivamus sit amet euismod nibh. Sed ornare enim vel tellus faucibus egestas. Donec sit amet diam placerat, interdum sapien sit amet, pulvinar neque. Morbi eget massa ut erat vehicula efficitur. 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam rutrum magna ut mi sollicitudin pellentesque. Vivamus sit amet euismod nibh. Sed ornare enim vel tellus faucibus egestas. Donec sit amet diam placerat, interdum sapien sit amet, pulvinar neque. Morbi eget massa ut erat vehicula efficitur. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam rutrum magna ut mi sollicitudin pellentesque. Vivamus sit amet euismod nibh. Sed ornare enim vel tellus faucibus egestas. Donec sit amet diam placerat, interdum sapien sit amet, pulvinar neque. Morbi eget massa ut erat vehicula efficitur. 
+
+
+\vspace{0.4cm}
 
 \begin{adjustwidth}{2cm}{2cm}
 
-\small{This section of text is an extended quote. Quisque blandit nulla et velit auctor, a interdum ex imperdiet. Cras eget quam velit. Sed vel ante felis. Phasellus dictum lectus ac metus ornare facilisis. Aliquam placerat diam id viverra aliquam. Curabitur elit nulla, lacinia id euismod eu, elementum ullamcorper felis.} \parencite[][p. 100]{sennett1998corrosion}
+\small{This section of text is an extended quote. Quisque blandit nulla et velit auctor, a interdum ex imperdiet. Cras eget quam velit. Sed vel ante felis. Phasellus dictum lectus ac metus ornare facilisis. Aliquam diam id viverra aliquam. Curabitur nulla, lacinia id euismod eu, elementum ullamcorper felis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam rutrum magna ut mi sollicitudin pellentesque. Vivamus sit amet euismod nibh. Sed ornare enim vel tellus faucibus egestas. Donec sit amet diam placerat, interdum sapien sit amet, pulvinar neque. Morbi eget massa ut erat vehicula efficitur. 
+} \parencite[][p. 100]{sennett1998corrosion}
 
 \end{adjustwidth}
 
-Curabitur ac augue sit amet enim pretium semper. Ut at finibus ligula. In hac habitasse platea dictumst. Duis porta felis lectus, non sollicitudin turpis ultricies in. Duis tristique justo feugiat elit sollicitudin, at efficitur sapien mollis. Etiam sem nisi, hendrerit vel bibendum non, vehicula vitae nibh. Aliquam commodo metus a dolor dignissim, sed lobortis nisl finibus. 
+\vspace{0.4cm}
+
+Curabitur ac augue sit amet enim pretium semper. Ut at finibus ligula. In hac habitasse platea dictumst. Duis porta felis lectus, non sollicitudin turpis ultricies in. Duis tristique justo feugiat elit sollicitudin, at efficitur sapien mollis. Etiam sem nisi, hendrerit vel bibendum non, vehicula vitae nibh. Aliquam commodo metus a dolor dignissim, sed lobortis nisl finibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam rutrum magna ut mi sollicitudin pellentesque. Vivamus sit amet euismod nibh. Sed ornare enim vel tellus faucibus egestas. Donec sit amet diam placerat, interdum sapien sit amet, pulvinar neque. Morbi eget massa ut erat vehicula efficitur. 
