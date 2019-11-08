@@ -1,0 +1,33 @@
+%% This is an Annotated Bibliography. Its purpose it to print the references.bib file with the contents of the annote field. 
+
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage{xcolor}
+
+\usepackage{geometry}
+ \geometry{a4paper, total={170mm,257mm}, left=25mm, top=20mm}
+
+\usepackage[notes,backend=biber,isbn=false,annotation]{biblatex-chicago}
+
+\addbibresource{references.bib}
+
+
+\title{Philosophy of Work \\Annotated Bibliography}
+\author{Andrew White (andrew.white2@hdr.mq.edu.au)\\Masters of Research\\Macquarie University}
+
+\begin{document}
+
+\maketitle
+
+\nocite{*}
+
+\setlength{\bibitemsep}{1.6\itemsep} 
+
+\nocite{*} 
+
+\printbibliography[title={References}] 
+
+\end{document}
+
