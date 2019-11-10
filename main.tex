@@ -27,7 +27,7 @@
 
 \usepackage[utf8]{inputenc} %% The usepackage command is used to add more functions to LaTeX. To import a package in LaTeX, you add the \usepackage directive to the preamble of your document. The syntax is \usepackage{PACKAGENAME}. inputenc specifies the input encoding for the document, and utf8 to allows for unicode characters for use with LaTeX beyond standard ASCII. 
 
-\renewcommand{\baselinestretch}{1.5} %% This command sets the line spacing for the document to 1.5.
+
 
 \usepackage{graphicx} %% This loads the graphics function to LaTeX. The graphics function allows us to load the Macquarie University logo on the cover page. 
 
@@ -54,9 +54,15 @@
 %% Section of text
 %% \end{adjustwidth}
 
+%---------------------------------------------------------- 
+% PARAGRAPH SETTINGS
+%----------------------------------------------------------
+
 % \parindent 0ex %% This sets the paragraph indent to zero
 \setlength{\parindent}{1cm} %% This sets the paragraph indent to 1cm.
-\setlength{\parskip}{0.25cm} %% This sets the paragraph indent to 0.25cm.
+\setlength{\parskip}{0.25cm} %% This sets the space between paragraphs to 0.25cm.
+
+\renewcommand{\baselinestretch}{1.5} %% This command sets the line spacing for the document to 1.5.
 
 %---------------------------------------------------------- 
 % DOCUMENT FONTS
